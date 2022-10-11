@@ -1,0 +1,248 @@
+libspiro (1:20200505-2) unstable; urgency=medium
+
+  * adjust uscan
+
+ -- Hideki Yamane <henrich@debian.org>  Thu, 14 May 2020 06:17:37 +0900
+
+libspiro (1:20200505-1) unstable; urgency=medium
+
+  * New upstream version 20200505
+    - Fix CVE-2019-19847 (Closes: #947276)
+  * Trim trailing whitespace.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+  * debian/control
+    - Update standards version to 4.5.0, no changes needed.
+    - Drop debhelper and set debhelper-compat (= 13)
+    - Update Maintaier address
+  * debian/{libspiro-dev,not-installed,libspiro-dev.manpages}
+    - Add more files to install, thanks to dh_missing
+  * debian/rules
+    - Drop override_dh_missing, it is enable by default with dh13
+    - Drop override_dh_install, use not-installed and install .a file instead
+  * debian/watch
+    - Adjust to catch upstream tarball name with "-dist"
+
+ -- Hideki Yamane <henrich@debian.org>  Wed, 13 May 2020 00:26:00 +0900
+
+libspiro (1:20190731-2) unstable; urgency=medium
+
+  * Team upload
+  * debian/libspiro-dev.install: Install pkgconfig file
+  * Use dh_missing --fail-missing
+
+ -- Jeremy Bicha <jbicha@debian.org>  Thu, 31 Oct 2019 20:19:48 -0400
+
+libspiro (1:20190731-1) unstable; urgency=medium
+
+  * New upstream version 20190731
+  * debian/patches
+    - drop 0001-reduce-test-parameter-to-deal-with-slow-build-machin.patch
+      since upstream changes its way
+  * debian/control
+    - set Standards-Version: 4.4.0
+    - add Rules-Requires-Root: no
+    - bump up to libspiro1
+  * debian/libspiro1.symbols
+    - rename and update
+  * add debian/salsa-ci.yml to exec CI on salsa.debian.org
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 18 Aug 2019 22:51:03 +0900
+
+libspiro (1:0.5.20150702-8) unstable; urgency=medium
+
+  * debian/{control,compat,rules}
+    - bump to dh12 and drop unnecessary override
+  * debian/control
+    -  update Vcs-* to use salsa.debian.org
+    - set Standards-Version: 4.3.0
+  * debian/copyright
+    - update Source URL, copyright year and use https for fomrat URL
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 13 Apr 2019 20:15:19 +0900
+
+libspiro (1:0.5.20150702-7) unstable; urgency=medium
+
+  * debian/control
+    - set Priority: optional
+    - set Standards-Version: 4.1.1
+    - drop libspiro0-dbg
+  * debian/rules
+    - migrate to -dbgsym package
+  * debian/watch
+   - update to version 4
+  * debian/copyright
+    - update copyright year
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 21 Oct 2017 09:02:17 +0900
+
+libspiro (1:0.5.20150702-5) unstable; urgency=medium
+
+  * debian/control
+    - set Build-Depends: debhelper (>= 10) and drop unnnecessary packages
+      with dh10
+    - add Multi-Arch: same for libspiro-dev
+    - set Standards-Version: 4.0.0
+  * debian/rules
+    - simplify with dh10
+  * debian/compat
+    - set 10
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 16 Jul 2017 19:47:45 +0900
+
+libspiro (1:0.5.20150702-4) unstable; urgency=medium
+
+  * remove empty debian/libspiro0.postrm
+
+ -- Hideki Yamane <henrich@debian.org>  Mon, 14 Dec 2015 06:47:20 +0900
+
+libspiro (1:0.5.20150702-3) unstable; urgency=medium
+
+  * debian/control
+    - remove unnecessary multiarch-support
+    - update Vcs-*
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 06 Dec 2015 09:51:57 +0900
+
+libspiro (1:0.5.20150702-2) unstable; urgency=medium
+
+  * debian/patches
+    - 0001-reduce-test-parameter-to-deal-with-slow-build-machin.patch
+      add patch for test failure in hurd-i386 buildd
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 18 Jul 2015 15:36:48 +0900
+
+libspiro (1:0.5.20150702-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.5.20150702 (Closes: #789012)
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 05 Jul 2015 03:32:47 +0900
+
+libspiro (1:0.3.20150131-2) unstable; urgency=medium
+
+  * upload to unstable
+
+ -- Hideki Yamane <henrich@debian.org>  Thu, 30 Apr 2015 00:00:30 +0900
+
+libspiro (1:0.3.20150131-1) experimental; urgency=medium
+
+  * New Upstream version 1:0.3.20150131
+  * drop debian/patches, it's unnecessary anymore
+  * update debian/libspiro0.symbols
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 01 Feb 2015 20:45:14 +0900
+
+libspiro (20071029-11) unstable; urgency=medium
+
+  * debian/watch
+   - update upstream URL, move to GitHub
+  * debian/control
+   - update Homepage
+   - set Standards-Version: 3.9.6
+   - update Vcs-Browser, move to cgit
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 01 Feb 2015 20:41:49 +0900
+
+libspiro (20071029-10) unstable; urgency=medium
+
+  * debian/control
+    - add Vcs-* field
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 06 Apr 2014 17:23:44 +0900
+
+libspiro (20071029-9) unstable; urgency=medium
+
+  * debian/control
+    - add dh-autoreconf
+    - set Standards-Version: 3.9.5
+  * debian/rules
+    - use dh_autoreconf
+    - exec aclocal to prevent version mismatch with aclocal.m4
+  * debian/patches
+    - add specify_SHELL.patch to avoid FTBFS
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 07 Jan 2014 11:59:36 +0900
+
+libspiro (20071029-8) unstable; urgency=low
+
+  * Team Upload.
+  * Use dpkg-gensymbols to generate symbols file instead of
+    pkg-kde-tools.
+  * Drop --with=kde option it works only with CMake and KDE
+    packages. Closes: bug#722991. Thanks to Christian Marillat.
+
+ -- Vasudev Kamath <kamathvasudev@gmail.com>  Mon, 16 Sep 2013 21:52:18 +0530
+
+libspiro (20071029-7) unstable; urgency=low
+
+  [ Vasudev Kamath ]
+  * Team Upload.
+  * Marked the packages multi-arch same, and added pre-depends on
+    multiarch-support. Thanks to Christian Marillat.
+    Closes: bug#721401
+  * Description field is fixed by removing extra space and article "a" in
+    the beginning.
+  * Install symlink to libspiro.so as part of libspiro-dev package.
+  * Symbols file is introduced using pkg-kde-tools, appropriate change is
+    done to rules to kde addon with dh and build-depends on pkg-kde-tools
+    is added.
+  * Converted copyright file to copyright-format 1.0.
+
+  [ Christian Perrier ]
+  * Rewrite package descriptions to fit the debian-l10n-english
+    standardized writing style.
+
+ -- Christian Perrier <bubulle@debian.org>  Tue, 10 Sep 2013 07:09:06 +0200
+
+libspiro (20071029-6) unstable; urgency=low
+
+  * debian/control
+    - improve description, fix "description-synopsis-starts-with-article"
+    - fix section as debug
+    - remove duplicate priority: tag
+  * add debian/source/format, "3.0 (quilt)"
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 18 Jun 2013 03:51:43 +0900
+
+libspiro (20071029-5) unstable; urgency=low
+
+  * upload to unstable
+
+ -- Hideki Yamane <henrich@debian.org>  Fri, 03 May 2013 10:29:14 +0900
+
+libspiro (20071029-4) experimental; urgency=low
+
+  * debian/libspiro.postrm.debhelper: remove it
+  * debian/libspiro0.postrm: add it
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 09 Apr 2013 10:55:14 +0900
+
+libspiro (20071029-3) experimental; urgency=low
+
+  * New maintainer (Closes: #700413)
+  * debian/control, rules
+    - set Standards-Version: 3.9.4
+    - switch cdbs to dh
+    - enable hardening
+  * debian/compat: set 9
+  * debian/libspiro0.install,libspiro-dev
+    - deal with Multi-Arch
+    - don't install *.la files
+
+ -- Hideki Yamane <henrich@debian.org>  Thu, 28 Mar 2013 08:48:04 +0900
+
+libspiro (20071029-2) unstable; urgency=low
+
+  * New maintainer (Closes: #466246).
+  * Standards-Version updated.
+  * Homepage field added.
+  * Migrated to CDBS.
+  * Add a new binary package with debugging symbols.
+
+ -- Ruben Molina <rmolina@udea.edu.co>  Sun, 01 Jun 2008 19:37:21 -0500
+
+libspiro (20071029-1) unstable; urgency=low
+
+  * Initial release (Closes: 448582).
+
+ -- Kęstutis Biliūnas <kebil@kaunas.init.lt>  Tue, 30 Oct 2007 08:47:54 +0200

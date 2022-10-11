@@ -1,0 +1,4 @@
+usr/include
+usr/lib/*/libspiro.so
+usr/lib/*/libspiro.a
+usr/lib/*/pkgconfig/libspiro.pc

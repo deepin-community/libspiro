@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS := hardening=+all,-pie
+
+%:
+	dh $@
+
+override_dh_strip:
+	dh_strip --dbgsym-migration='libspiro0-dbg (<< 1:0.5.20150702-7~)'
